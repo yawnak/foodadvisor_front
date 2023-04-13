@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Profile Page {{ .UserId }}</title>
+    <script>
+      function getUserData() {
+        const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+          if (this.readyState === 4 && this.status === 200) {
+            const data = JSON.parse(this.responseText);
+            document.getElementById("username").value = data.username;
+            document.getElementById("expiration").value = data.expiration;
+          }
+        };
+        xhr.open("GET", "http://localhost:8080/api/users/{{ .UserId }}", true);
+        xhr.withCredentials = true;
+        xhr.send();
+      }
+    </script>
+  </head>
+  <body onload="getUserData()">
+    <h1>Welcome to Your Profile Page!</h1>
+    <form>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username"><br><br>
+      <label for="expiration">Expiration:</label>
+      <input type="number" id="expiration" name="expiration"><br><br>
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>
