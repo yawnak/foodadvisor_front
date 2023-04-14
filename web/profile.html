@@ -2,22 +2,8 @@
 <html>
   <head>
     <title>Profile Page {{ .UserId }}</title>
-    <script>
-      function getUserData() {
-        const xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function() {
-          if (this.readyState === 4 && this.status === 200) {
-            const data = JSON.parse(this.responseText);
-            document.getElementById("username").value = data.username;
-            document.getElementById("expiration").value = data.expiration;
-          }
-        };
-        xhr.open("GET", "http://localhost:8080/api/users/{{ .UserId }}", true);
-        xhr.withCredentials = true;
-        xhr.send();
-      }
-    </script>
     <script src="/static/js/profile.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/profile.css">
   </head>
   <body onload="getUserData()">
     <h1>Welcome to Your Profile Page!</h1>
@@ -28,5 +14,13 @@
       <input type="number" id="expiration" name="expiration"><br><br>
       <input type="button" value="Save" onclick="updateUser()">
     </form>
+  <br>
+  <div class="button-container">
+		<a href="/meals/basic-advice"><button class="button">Get Basic Advice</button></a>
+	</div>
+  <br>
+  <div class="button-container">
+		<a href="/meals"><button class="button">Go to All Meals</button></a>
+	</div>
   </body>
 </html>

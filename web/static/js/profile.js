@@ -55,3 +55,20 @@ function updateUser() {
             console.error('There was a problem with the fetch operation:', error);
         });
 }
+
+function getUserData() {
+    const curPath = window.location.pathname;
+    const parts = curPath.split('/');
+    const userid = parts[parts.length - 1];
+    const xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+            const data = JSON.parse(this.responseText);
+            document.getElementById("username").value = data.username;
+            document.getElementById("expiration").value = data.expiration;
+        }
+    };
+    xhr.open("GET", `http://localhost:8080/api/users/${userid}`, true);
+    xhr.withCredentials = true;
+    xhr.send();
+}
