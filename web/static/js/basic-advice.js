@@ -10,7 +10,7 @@ function fetchMeals() {
       const mealsList = document.getElementById('mealsList');
       data.meals.forEach(meal => {
         const listItem = document.createElement('li');
-        listItem.innerText = meal.Name;
+        listItem.innerText = meal.name;
         mealsList.appendChild(listItem);
       });
     })
