@@ -14,5 +14,6 @@ func (srv *Server) initRoutes() *chi.Mux {
 	router.Get("/signup", srv.signup)
 	router.Get("/login", srv.login)
 	router.Get("/users/{id:[0-9]+}", srv.getUser)
+	router.Get("/meals/basic-advice", srv.getBasicAdvice)
 	return router
 }

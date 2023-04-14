@@ -35,3 +35,7 @@ func (srv *Server) getUser(w http.ResponseWriter, r *http.Request) {
 		UserId: uid,
 	})
 }
+
+func (srv *Server) getBasicAdvice(w http.ResponseWriter, r *http.Request) {
+	template.BasicAdvice.Execute(w, nil)
+}
