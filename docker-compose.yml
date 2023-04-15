@@ -1,0 +1,25 @@
+# Specify the version for docker-compose.yml
+version: "3.8"
+
+# add the serivces needed (postgres,go)
+services:
+  app:
+    container_name: api-server
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+      - DATABASE_HOST=${DB_HOST}
+      - DATABASE_PORT=${DB_PORT}
+    build: .
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - '8000:8080'
+    networks:
+      - learning
+
+networks:
+  learning:
+    driver: bridge
