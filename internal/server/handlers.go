@@ -44,3 +44,6 @@ func (srv *Server) getMeals(w http.ResponseWriter, r *http.Request) {
 	template.Meals.Execute(w, nil)
 }
 
+func (srv *Server) createMeal(w http.ResponseWriter, r *http.Request) {
+	template.CreateMeal.Execute(w, nil)
+}

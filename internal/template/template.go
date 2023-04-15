@@ -10,4 +10,5 @@ var (
 	Profile     *htmltempl.Template = htmltempl.Must(htmltempl.ParseFiles("web/profile.html"))
 	BasicAdvice *htmltempl.Template = htmltempl.Must(htmltempl.ParseFiles("web/basic-advice.html"))
 	Meals       *htmltempl.Template = htmltempl.Must(htmltempl.ParseFiles("web/meals.html"))
+	CreateMeal  *htmltempl.Template = htmltempl.Must(htmltempl.ParseFiles("web/createMeal.html"))
 )
