@@ -1,0 +1,27 @@
+.arrow-buttons {
+    text-align: center;
+    /* center the buttons horizontally */
+}
+
+.left-arrow-button,
+.right-arrow-button {
+    display: inline-block;
+    /* make the buttons appear on the same line */
+    width: 50px;
+    /* set the button width */
+    height: 50px;
+    /* set the button height */
+    margin: 0 10px;
+    /* add horizontal spacing between the buttons */
+}
+
+.label {
+    display: inline-block;
+    /* make the label appear on the same line as the buttons */
+    font-size: 18px;
+    /* set the font size */
+    font-weight: bold;
+    /* make the label text bold */
+    margin: 0 10px;
+    /* add horizontal spacing between the label and buttons */
+}

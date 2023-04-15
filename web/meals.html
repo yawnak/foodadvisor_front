@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="/static/js/meals.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/login.css">
+    <title>Display Meals</title>
+  </head>
+  <body onload="initOffsetAndLimit(); updatePageButtons(); fetchMeals();">
+    <div class="button-container">
+		  <a href="/meals/create-form"><button class="button">Create new meal</button></a>
+	  </div>
+    <div class="arrow-buttons">
+      <button onclick="pageDecrease(); fetchMeals(); updatePageButtons();" type="button" class="left-arrow-button" id="pageLeft">&#8592;</button>
+      <span class="label" id="pageIndicator"></span>
+      <button onclick="pageIncrease(); fetchMeals(); updatePageButtons();" type="button" class="right-arrow-button" id="pageRight">&#8594;</button>
+    </div>
+    <ul id="mealsList"></ul>
+  </body>
+</html>

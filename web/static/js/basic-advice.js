@@ -1,4 +1,4 @@
-function fetchMeals() {
+function fetchBasicAdvice() {
   const options = {
     method: 'GET',
     credentials: 'include'
