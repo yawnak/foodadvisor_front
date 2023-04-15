@@ -12,7 +12,7 @@ COPY *.go ./
 
 COPY . ./
 
-RUN go build -o /build
+RUN go build -o /build ./cmd/web
 
 EXPOSE 3000
 
