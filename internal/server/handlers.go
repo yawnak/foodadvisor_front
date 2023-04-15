@@ -39,3 +39,8 @@ func (srv *Server) getUser(w http.ResponseWriter, r *http.Request) {
 func (srv *Server) getBasicAdvice(w http.ResponseWriter, r *http.Request) {
 	template.BasicAdvice.Execute(w, nil)
 }
+
+func (srv *Server) getMeals(w http.ResponseWriter, r *http.Request) {
+	template.Meals.Execute(w, nil)
+}
+
