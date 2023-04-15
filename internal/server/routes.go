@@ -17,6 +17,6 @@ func (srv *Server) initRoutes() *chi.Mux {
 	router.Get("/meals/basic-advice", srv.getBasicAdvice)
 	router.Get("/meals", srv.getMeals)
 	router.Get("/meals/create-form", srv.createMeal)
-	router.Get("/meals/{id:[0-9]+", srv.getMeal)
+	router.Get("/meals/{id:[0-9]+}", srv.getMeal)
 	return router
 }
