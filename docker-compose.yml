@@ -7,7 +7,7 @@ services:
     container_name: front-server
     image: yawnak/foodadvisor-front:v0.1.2
     ports:
-      - '3000:3000'
+      - '80:3000'
     networks:
       - learning
 
