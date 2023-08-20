@@ -1,14 +1,21 @@
 package server
 
 import (
+	"io/fs"
+	"log"
 	"net/http"
 
 	"github.com/go-chi/chi/v5"
+	"github.com/yawnak/foodadvisor_front/internal/template"
 )
 
 func (srv *Server) initRoutes() *chi.Mux {
 	router := chi.NewRouter()
-	fs := http.FileServer(http.Dir("web/static"))
+	subdir, err := fs.Sub(template.Static, "web/static")
+	if err != nil {
+		log.Fatalln("error making subdirectory:", err)
+	}
+	fs := http.FileServer(http.FS(subdir))
 	router.Handle("/static/*", http.StripPrefix("/static/", fs))
 
 	router.Get("/signup", srv.signup)
