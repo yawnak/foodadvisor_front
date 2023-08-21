@@ -22,6 +22,6 @@ WORKDIR /app
 #copy application binary
 COPY --from=gowebapp /build /build
 
-EXPOSE 3000
+EXPOSE 80
 
 CMD [ "/build" ]

@@ -8,5 +8,5 @@ import (
 
 func main() {
 	srv := server.NewServer()
-	log.Fatalln(srv.ListenAndServe("3000"))
+	log.Fatalln(srv.ListenAndServe("80"))
 }

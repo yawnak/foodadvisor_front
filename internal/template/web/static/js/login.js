@@ -34,7 +34,7 @@ function loginUser() {
             // Check if the response status is 200
             if (data.id) {
                 // Redirect the user to their profile page
-                window.location.href = `http://localhost:3000/users/${data.id}`;
+                window.location.href = `/users/${data.id}`;
             }
             else {
                 throw new Error('The response did not contain a valid ID');
