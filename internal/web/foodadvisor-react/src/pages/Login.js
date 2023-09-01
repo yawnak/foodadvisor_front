@@ -14,6 +14,23 @@ export default function Login() {
         setShowPassword((show) => !show);
     };
 
+    const [loadingLogin, setLoadingLogin] = useState(false);
+    const [showLoading, setshowLoading] = useState(false);
+
+    async function handleLoginRequest() {
+        setLoadingLogin(true)
+        setTimeout(() => {
+            setshowLoading(true)
+        }, 1000)
+        try {
+            const response = await foodAdvisorClient.post("/login");
+            console.log(response)
+        } catch (error) {
+            console.error(error)
+        }
+        setLoadingLogin(false)
+        setshowLoading(false)
+    }
 
     return (
         <div className='login'>
@@ -52,6 +69,8 @@ export default function Login() {
                     onClick={handleLoginRequest}>
                     Log in
                 </Button>
+                
+                {loadingLogin && showLoading && <LinearProgress color="secondary" />}
             </Stack>
         </div>
     )
