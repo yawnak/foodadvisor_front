@@ -1,4 +1,4 @@
-import { TextField } from "@mui/material"
+import { LinearProgress, TextField } from "@mui/material"
 import { Button } from "@mui/material"
 import { Link } from "react-router-dom"
 
@@ -18,11 +18,13 @@ export default function SignUp() {
                 id="login-input-password"
                 variant='filled'
             />
+            <p>Already have an account? Log in <Link to="/login">here</Link></p>
             <Button
                 variant='contained' size='large' color='secondary'>
                 Sign up
             </Button>
-            <p>Already have an account? Log in <Link to="/login">here</Link></p>
+            
+            <LinearProgress color="secondary" />
         </div>
     )
 }
